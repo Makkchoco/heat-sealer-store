@@ -1,4 +1,3 @@
-// Runs on Cloudflare's server. Prices and delivery are calculated HERE, never trusted from the browser.
 const BUNDLES = {1:7500, 2:15000, 3:21000, 4:27000, 5:33000};
 const MORE_RATE = 6600, FREE_MIN_QTY = 2, SINGLE_FEE = 4000, SURCHARGE = 2000;
 const Z_STATES = {
@@ -31,8 +30,11 @@ export async function onRequestPost({request, env}) {
   const sbHeaders = {apikey: env.SUPABASE_SECRET_KEY, "Content-Type": "application/json"};
 
   // stock check
-  const st = await (await fetch(`${SB}/rest/v1/stock?id=eq.1&select=quantity`, {headers: sbHeaders})).json();
-  if (!Array.isArray(st) || !st[0]) return json({error: "Store is not ready yet."}, 500);
+  if (!env.SUPABASE_SECRET_KEY || !env.PAYSTACK_SECRET_KEY) return json({error: "Store is not ready yet (code S0: a secret key is missing in Cloudflare)."}, 500);
+  const stRes = await fetch(`${SB}/rest/v1/stock?id=eq.1&select=quantity`, {headers: sbHeaders});
+  if (!stRes.ok) return json({error: `Store is not ready yet (code S1-${stRes.status}: Supabase rejected the secret key).`}, 500);
+  const st = await stRes.json();
+  if (!Array.isArray(st) || !st[0]) return json({error: "Store is not ready yet (code S2: the stock table has no row)."}, 500);
   if (st[0].quantity < qty) return json({error: "Sorry, we do not have enough stock for that quantity."}, 409);
 
   const reference = "SS" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase();
