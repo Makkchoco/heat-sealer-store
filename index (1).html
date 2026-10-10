@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapSeal Naija | Mini Portable Heat Sealer</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="USB rechargeable mini heat sealer. Seal suitable plastic bags and open them with one tool. Order online in Nigeria.">
+<style>
+:root{--cream:#f6f1e7;--white:#fff;--ink:#2a2d2b;--muted:#5f645f;--green:#2f6b4f;--green-d:#1f4d38;--line:#e2dccd}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.brand{display:flex;align-items:center;gap:10px}.brand img{height:40px;width:40px;border-radius:8px}
+.hn{display:flex;align-items:center;gap:14px}.hn a.tl{color:var(--green-d);font-weight:600;text-decoration:none;font-size:.95rem}
+.policy{display:none}.policy:target{display:block}.policy h3{margin-top:1.2em;font-size:1.1rem}
+.steps2{list-style:none;padding:0;margin:10px 0 0}.steps2 li{padding:6px 0 6px 28px;position:relative;color:var(--muted)}
+.steps2 li.on{color:var(--ink);font-weight:600}.steps2 li:before{content:"○";position:absolute;left:4px}.steps2 li.on:before{content:"✔";color:var(--green)}
+#invoiceBox{display:none}
+@media print{body.printing>*:not(#invoiceBox){display:none!important}body.printing #invoiceBox{display:block!important}body.printing{background:#fff}}
+.save{display:block;font-size:.85rem;color:var(--green-d);font-weight:500}
+.bundles input[type=number]{width:76px;height:auto;margin:0 6px;padding:5px 8px;border:1.5px solid #cfc8b6;border-radius:6px;font:inherit}
+#admin{max-width:720px;margin:0 auto;padding:20px}
+#admin input,#admin button,#admin select{font:inherit;padding:10px;border-radius:8px;border:1.5px solid #cfc8b6;width:100%;margin-bottom:8px}
+#admin button{background:var(--green);color:#fff;border:0;font-weight:600;cursor:pointer}
+#admin button.g{background:#7d827d}
+#admin img,#admin video{max-width:100%;max-height:220px;border-radius:8px;display:block;margin-bottom:8px}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2rem,7vw,3.2rem)}h2{font-size:clamp(1.5rem,5vw,2.1rem)}
+p{margin:0 0 1em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:52px 0}
+.alt{background:var(--white)}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.brand{font-family:Georgia,serif;font-weight:700;font-size:1.25rem;color:var(--green-d);text-decoration:none}
+.btn{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:8px;padding:14px 26px;font:600 1rem system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--green-d)}.btn:disabled{background:#9aa59f;cursor:not-allowed}
+.btn.sm{padding:9px 16px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e0a82e;outline-offset:2px}
+.hero{display:grid;gap:32px;align-items:center}
+.hero .sub{font-size:1.15rem;color:var(--muted)}
+.prod{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px}
+.prod svg{width:100%;height:auto;display:block;border-radius:8px;background:#eee8d9}
+.note{font-size:.9rem;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+.order{display:grid;gap:28px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px}
+.bundles{display:grid;gap:10px;margin:0 0 18px;padding:0;border:0}
+.bundles label{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;background:var(--white)}
+.bundles input{accent-color:var(--green);width:20px;height:20px;margin-right:10px}
+.bundles label:has(input:checked){border-color:var(--green);background:#eef5f0}
+.bundles .l{display:flex;align-items:center;font-weight:600}
+.bundles .p{font-weight:700;font-size:1.1rem;white-space:nowrap}
+.tag{display:inline-block;background:var(--green);color:#fff;font-size:.78rem;font-weight:700;border-radius:99px;padding:2px 10px;margin-left:8px}
+.f{margin-bottom:14px}
+.f label{display:block;font-weight:600;font-size:.95rem;margin-bottom:4px}
+.f input,.f select{width:100%;padding:12px;border:1.5px solid #cfc8b6;border-radius:8px;font:inherit;background:#fff}
+.sum{border-top:1px solid var(--line);margin-top:6px;padding-top:12px}
+.sum div{display:flex;justify-content:space-between;padding:4px 0}
+.sum .tot{font-weight:800;font-size:1.25rem;border-top:2px solid var(--ink);margin-top:6px;padding-top:10px}
+.free{color:var(--green-d);font-weight:700}
+.sur{background:#fff6dd;border:1px solid #ecd48a;border-radius:8px;padding:10px 12px;font-size:.92rem;margin:8px 0}
+.msg{border-radius:8px;padding:12px;margin-top:12px;font-size:.95rem;display:none}
+.msg.err{display:block;background:#fde8e6;border:1px solid #e9aaa4}
+.msg.info{display:block;background:#eef5f0;border:1px solid #b5d3c1}
+.video{aspect-ratio:16/9;background:var(--ink);color:#ddd;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.video video{width:100%;height:100%;border-radius:14px}
+.grid2{display:grid;gap:16px}
+ol.steps{padding-left:1.2em;margin:0}ol.steps li{margin-bottom:.7em}
+ul.tick{list-style:none;padding:0;margin:0}ul.tick li{padding-left:26px;position:relative;margin-bottom:.6em}
+ul.tick li:before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:6px;border-left:2.5px solid var(--green);border-bottom:2.5px solid var(--green);transform:rotate(-45deg)}
+details{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:10px 0 0}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+footer{background:var(--ink);color:#d9d9d4;padding:36px 0;font-size:.95rem}
+footer a{color:#fff}
+@media(min-width:760px){.hero{grid-template-columns:1.1fr 1fr}.order{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="brand" href="#top"><img data-logo alt="SnapSeal Naija logo">SnapSeal Naija</a>
+  <span class="hn"><a class="tl" href="#track">Track order</a><a class="btn sm" href="#order">Order now</a></span>
+</div></header>
+
+<main id="top">
+<div class="wrap"><div class="card" id="paidBox" hidden style="margin-top:20px"></div></div>
+
+<section><div class="wrap hero">
+  <div>
+    <h1>Seal your snack bags in one touch. Open them with the same tool.</h1>
+    <p class="sub">A small USB-rechargeable heat sealer for suitable plastic bags. Keep chin-chin, popcorn, nuts and sweets neatly packed, at home or for your customers.</p>
+    <p><a class="btn" href="#order">Order now - from ₦7,500</a></p>
+    <p class="note">Order 2 or more pieces for free delivery to your nearest pickup station. A small extra fee applies to some far northern states.</p>
+  </div>
+  <div class="prod">
+    <!-- REPLACE this drawing with your real photo: <img src="images/sealer.jpg" alt="Mini portable heat sealer" width="800" height="600"> -->
+    <img id="heroImg" alt="Mini portable heat sealer" hidden style="width:100%;border-radius:8px"><svg id="heroPh" viewBox="0 0 400 300" role="img" aria-label="Placeholder illustration of a mini heat sealer. Replace with your product photo.">
+      <rect x="70" y="120" width="260" height="70" rx="35" fill="#2a2d2b"/>
+      <rect x="95" y="138" width="150" height="34" rx="17" fill="#2f6b4f"/>
+      <circle cx="290" cy="155" r="16" fill="#f6f1e7"/>
+      <text x="200" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5f645f">Product photo goes here</text>
+    </svg>
+    <div class="gal" id="gal"></div>
+    <p class="note" style="margin:10px 0 0">1 piece: ₦7,500</p>
+  </div>
+</div></section>
+
+<section class="alt" id="order"><div class="wrap">
+  <h2>Choose your quantity and order</h2>
+  <div class="order">
+    <div class="card">
+      <fieldset class="bundles" id="bundles" style="padding:0">
+        <legend style="font-weight:700;margin-bottom:10px">How many pieces?</legend>
+      </fieldset>
+      <p class="note">The 1-piece price does not include delivery.</p>
+    </div>
+
+    <div class="card">
+      <form id="checkout" novalidate>
+        <div class="f"><label for="name">Full name</label><input id="name" autocomplete="name" required></div>
+        <div class="f"><label for="phone">Phone number</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08012345678" required></div>
+        <div class="f"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="state">State</label><select id="state" required><option value="">Select your state</option></select></div>
+        <div class="f"><label for="city">City or town</label><input id="city" autocomplete="address-level2" required></div>
+        <div class="f"><label for="address">Full street address</label><input id="address" autocomplete="street-address" placeholder="House number, street, area" required></div>
+        <div class="f"><label for="pickup">Nearest Jumia pickup location <em style="font-weight:400;color:var(--muted)">(Jumia is the delivery courier we use)</em></label><select id="pickup" required><option value="">Select your state first</option></select><p class="note" id="puNote" style="margin:4px 0 0">You collect your parcel from the Jumia location you choose.</p></div>
+
+        <div class="sum" aria-live="polite">
+          <div><span id="qtyLabel">1 × mini heat sealer</span><span id="sub">₦7,500</span></div>
+          <div><span>Delivery</span><span id="del">Select your state</span></div>
+          <div id="xrow" hidden><span id="xlbl">Distance fee</span><span id="xfee"></span></div>
+          <div class="tot"><span>Total to pay</span><span id="total">-</span></div>
+        </div>
+        <div id="sur"></div>
+        <button class="btn" style="width:100%;margin-top:14px" type="submit">Continue to payment</button>
+        <div class="msg" id="msg" role="alert"></div>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>See it in action</h2>
+  <!-- When you have a video: replace the div below with <video controls preload="none" poster="images/poster.jpg"><source src="images/demo.mp4" type="video/mp4"></video> -->
+  <div class="video" id="vidBox"><div>Demo video coming soon.<br><span class="note" style="color:#aaa">Add your short demo clip here.</span></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap grid2">
+  <div>
+    <h2>How to use it</h2>
+    <ol class="steps">
+      <li>Charge the sealer with the USB cable included.</li>
+      <li>Fill your bag and press the open end flat.</li>
+      <li>Hold the sealer across the bag opening and press the one-touch button.</li>
+      <li>Release when the seal is done and let it cool a moment.</li>
+      <li>To open a bag, use the opening function of the tool.</li>
+    </ol>
+    <p class="note">Use only on suitable plastic bags. Test on one bag first. Follow the manufacturer's safety instructions that come in the box.</p>
+  </div>
+  <div>
+    <h2>Who it helps</h2>
+    <h3 style="font-size:1.1rem">At home</h3>
+    <ul class="tick"><li>Close snack and food bags after opening.</li><li>Pack suitable items for storage or gifting.</li></ul>
+    <h3 style="font-size:1.1rem">For small businesses</h3>
+    <ul class="tick"><li>Seal chin-chin, popcorn, nuts and sweets for customers.</li><li>Pack products neatly from home without a big machine.</li></ul>
+  </div>
+</div></section>
+
+<section><div class="wrap grid2">
+  <div class="card">
+    <h2>Features</h2>
+    <ul class="tick">
+      <li>USB rechargeable</li>
+      <li>Seals suitable plastic bags</li>
+      <li>Helps open bags</li>
+      <li>One-touch quick sealing</li>
+      <li>Small and portable</li>
+    </ul>
+    <!-- Battery life claim intentionally left out until you have tested it yourself. -->
+  </div>
+  <div class="card">
+    <h2>In the package</h2>
+    <ul class="tick"><li>Mini portable heat sealer</li><li>USB charging cable</li></ul>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Which bags can I seal?</summary><p>It is made for suitable plastic bags. Always test one bag before sealing a full batch. Some materials will not seal.</p></details>
+  <details><summary>How do I charge it?</summary><p>Plug the included USB cable into a phone charger, power bank or computer.</p></details>
+  <details><summary>How long does the battery last?</summary><p>This depends on how often you use it.</p></details>
+  <details><summary>Can I pay on delivery?</summary><p>No. You pay securely online before we dispatch your order.</p></details>
+  <details><summary>How long does delivery take?</summary><p>Delivery usually takes 2 to 7 working days to your chosen Jumia pickup station. This is an estimate and can vary by location.</p></details>
+</div></section>
+
+<section><div class="wrap grid2">
+  <div class="card" id="delivery">
+    <h2>Delivery policy</h2>
+    <p>We deliver across Nigeria through Jumia. You choose the Jumia pickup station nearest to you and collect your parcel there. Your delivery fee is shown before you pay.</p>
+    <ul class="tick">
+      <li>2 or more pieces: free delivery in the South-West, South-East and South-South.</li>
+      <li>2 or more pieces to North-Central, North-East and North-West: ₦2,000 delivery fee because of distance.</li>
+      <li>1 piece: delivery is ₦4,000 to any state.</li>
+      <li>Port Harcourt: we deliver to your home or street address.</li>
+    </ul>
+    <p class="note">Estimated delivery time: 2 to 7 working days to your chosen Jumia pickup station. This is an estimate and can vary by location.</p>
+  </div>
+  <div class="card" id="returns">
+    <h2>Returns, refunds and support</h2>
+    <p>If your item is damaged or faulty, contact us within 24 hours of picking it up from the Jumia station. Send your order number and a clear photo.</p>
+    <p>We will replace or refund your item, depending on the situation. If the item has to be sent to you again, the delivery cost for sending it to your location again is paid by you.</p>
+    <p><strong>Support:</strong> WhatsApp <a href="https://wa.me/2348058282843">+234 805 828 2843</a> · makkychoco@gmail.com</p>
+  </div>
+</div></section>
+
+<section class="alt" id="track"><div class="wrap" style="max-width:640px">
+  <h2>Track your order</h2>
+  <p>Enter the order code you received after paying. It looks like SSMV1IROSPHQVS.</p>
+  <div class="f"><label for="tcode">Order code</label><input id="tcode" autocomplete="off" autocapitalize="characters"></div>
+  <button class="btn" id="tbtn" type="button">Track order</button>
+  <div class="card" id="tres" hidden style="margin-top:14px"></div>
+</div></section>
+
+<section class="policy alt" id="privacy"><div class="wrap" style="max-width:760px">
+  <h2>Privacy policy</h2>
+  <p class="note">Last updated: October 2026</p>
+  <h3>What we collect</h3>
+  <p>When you order, we collect your name, phone number, email, state, city, street address and chosen pickup location. We also keep your order details.</p>
+  <h3>Why we use it</h3>
+  <p>We use your details to process your order, arrange delivery, contact you about your order, and handle returns or support.</p>
+  <h3>Who we share it with</h3>
+  <p>Payments are processed by Paystack. We never see or store your card details. We share the details needed for delivery with Jumia, our delivery courier. Our order records are stored with our database provider. We do not sell your personal information.</p>
+  <h3>How long we keep it</h3>
+  <p>We keep order records for as long as we need them for delivery, support, accounting and legal reasons.</p>
+  <h3>Your choices</h3>
+  <p>You can ask us to correct or delete your personal information, where we are allowed to, by contacting us below.</p>
+  <h3>Contact</h3>
+  <p>WhatsApp +234 805 828 2843 · makkychoco@gmail.com</p>
+</div></section>
+
+<section class="policy alt" id="terms"><div class="wrap" style="max-width:760px">
+  <h2>Terms of sale</h2>
+  <p class="note">Last updated: October 2026</p>
+  <h3>Orders and prices</h3>
+  <p>Prices are in Nigerian naira (₦). Your total, including any delivery fee, is shown before you pay. An order is confirmed only after your payment is confirmed.</p>
+  <h3>Payment</h3>
+  <p>Payments are made online through Paystack. We do not offer pay on delivery.</p>
+  <h3>Delivery</h3>
+  <p>We deliver through Jumia to the pickup location you choose. Delivery times are estimates and can vary. You must collect your parcel from the pickup location. Customers in Port Harcourt receive home delivery to their street address instead. Delivery fees are shown at checkout.</p>
+  <h3>Returns and refunds</h3>
+  <p>If your item is damaged or faulty, contact us within 24 hours of picking it up, with your order number and a photo. We will replace or refund according to the situation, as described in our returns section.</p>
+  <h3>Using the product</h3>
+  <p>Use the sealer only on suitable plastic bags and follow the manufacturer's safety instructions. Test on one bag first.</p>
+  <h3>Governing law</h3>
+  <p>These terms are governed by the laws of the Federal Republic of Nigeria.</p>
+  <h3>Contact</h3>
+  <p>WhatsApp +234 805 828 2843 · makkychoco@gmail.com</p>
+</div></section>
+</main>
+
+<div id="invoiceBox"></div>
+<div id="admin" hidden>
+  <h1 style="display:flex;align-items:center;gap:10px"><img data-logo alt="" style="height:44px;width:44px;border-radius:8px;margin:0">SnapSeal Naija admin</h1>
+  <div class="card" id="aLogin">
+    <input id="em" type="email" placeholder="Admin email" autocomplete="username">
+    <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+    <button id="go">Log in</button>
+    <p class="note" id="lm"></p>
+  </div>
+  <div id="aOut" hidden>
+    <button class="g" id="lo" style="width:auto">Log out</button>
+    <div style="display:flex;gap:8px;margin:8px 0"><button id="tOrd">Orders</button><button class="g" id="tMed">Photos and video</button></div>
+    <div id="tabOrders">
+      <div class="card" id="stockBox"></div>
+      <div class="card">
+        <input id="q" placeholder="Search name, phone, reference, state">
+        <select id="fp"><option value="">All payments</option><option>pending</option><option>successful</option><option>failed</option><option>refunded</option></select>
+        <select id="ff"><option value="">All fulfilment</option><option>new</option><option>processing</option><option>dispatched</option><option>delivered</option></select>
+        <button class="g" id="csv">Download CSV</button>
+      </div>
+      <div id="orders"></div>
+    </div>
+    <div id="tabMedia" hidden>
+      <p class="note">Photos shrink automatically so the site stays fast. Videos must be under 50 MB (20 to 40 seconds works best).</p>
+      <div id="slots"></div>
+    </div>
+  </div>
+</div>
+<footer><div class="wrap">
+  <p><img data-logo alt="SnapSeal Naija logo" style="height:64px;width:64px;border-radius:10px;display:block;margin-bottom:8px"><strong>SnapSeal Naija</strong><br>Port Harcourt, Nigeria</p>
+  <p>WhatsApp: <a href="https://wa.me/2348058282843">+234 805 828 2843</a> · Email: <a href="mailto:makkychoco@gmail.com">makkychoco@gmail.com</a></p>
+  <p><a href="#delivery">Delivery policy</a> · <a href="#returns">Returns and refunds</a> · <a href="#privacy">Privacy policy</a> · <a href="#terms">Terms</a> · <a href="#track">Track order</a></p>
+</div></footer>
+
+<script>
+/* ===== YOUR SETTINGS - edit this file on GitHub (pencil icon) ===== */
+
+/* 1. Supabase details (from Project Settings > API). The "anon" key is meant to be public. */
+window.SUPABASE_URL = "https://kshtwnflgwwuyngjxzqn.supabase.co";
+window.SUPABASE_ANON_KEY = "sb_publishable_uVimBadTW6g290Rc8ijEZQ_is_LZKOn";
+
+/* 2. Jumia pickup locations customers can choose, by state.
+   These cities come from Jumia's delivery zones list. To show an exact station,
+   change an entry to e.g. "Port Harcourt - Station name, full address".
+   Official station finder: https://www.jumia.com.ng/sp-jumia-delivery/
+   Keep the quotes and commas exactly as shown. States missing here (Kebbi, Sokoto, Katsina,
+   Jigawa, Zamfara, Taraba, Yobe) have no Jumia city on the list you gave me yet. */
+window.PICKUP_STATIONS = {
+  "Lagos": ["Ajah", "Awoyaya", "Badagry", "Epe", "Ibeju-Lekki", "Ijanikin", "Ikorodu", "Lagos", "Ojo", "Ojokoro", "Okokomaiko"],
+  "Ogun": ["Abeokuta", "Agbara", "Ago Iwoye", "Akute", "Ijebu Igbo", "Ijebu Ode", "Ilaro", "Ilishan Remo", "Iperu", "Mowe Ibafo", "Obantoko", "Redeemed Camp", "Sagamu", "Sango Otta"],
+  "FCT (Abuja)": ["Abuja", "Gwagwalada", "Idu"],
+  "Rivers": ["Home delivery (Port Harcourt)", "Bonny Island", "Eleme", "Oyigbo"],
+  "Ondo": ["Akoko", "Akure", "Ondo Town", "Ore", "Owo"],
+  "Anambra": ["Awka", "Nnewi", "Onitsha"],
+  "Oyo": ["Ibadan", "Ogbomosho", "Oyo Town"],
+  "Delta": ["Abraka", "Agbarho", "Agbor", "Asaba", "Fupre", "Obiaruku", "Oghara", "Ozoro", "Sapele", "Udu", "Ughelli", "Warri"],
+  "Edo": ["Benin", "Egor", "Ekpoma", "Etsako", "Uromi"],
+  "Osun": ["Ede", "Ikire", "Ikirun", "Ile Ife", "Ilesha", "Iwo", "Osogbo"],
+  "Imo": ["Owerri"],
+  "Ekiti": ["Ado Ekiti"],
+  "Nasarawa": ["Keffi", "Lafia", "Masaka"],
+  "Enugu": ["Enugu", "Nsukka"],
+  "Kwara": ["Ilorin", "Offa"],
+  "Abia": ["Aba", "Umuahia"],
+  "Cross River": ["Calabar"],
+  "Akwa Ibom": ["Eket", "Ikot Ekpene", "Uyo"],
+  "Plateau": ["Jos"],
+  "Kaduna": ["Kaduna", "Zaria"],
+  "Borno": ["Maiduguri"],
+  "Niger": ["Minna", "Suleja"],
+  "Bayelsa": ["Yenagoa"],
+  "Ebonyi": ["Abakaliki"],
+  "Bauchi": ["Bauchi"],
+  "Kano": ["Kano"],
+  "Gombe": ["Gombe"],
+  "Kogi": ["Lokoja", "Okene"],
+  "Adamawa": ["Yola"],
+  "Benue": ["Makurdi"]
+};
+
+</script>
+<script>
+/* STORE SETTINGS (preview only). The real server will recalculate everything in Stage 4
+   and never trust numbers from this page. */
+const BUNDLES = {1:7500, 2:15000, 3:21000, 4:27000, 5:33000};
+const FREE_MIN_QTY = 2;      // bundles of 2+ get the free-delivery rule
+const SINGLE_FEE = 4000;     // delivery for 1 piece, every state
+const SURCHARGE = 2000;      // added for 2+ pieces in far zones
+const ZONES = {
+  sw:{n:"South-West",extra:0}, se:{n:"South-East",extra:0}, ss:{n:"South-South",extra:0},
+  nc:{n:"North-Central",extra:SURCHARGE}, ne:{n:"North-East",extra:SURCHARGE}, nw:{n:"North-West",extra:SURCHARGE}
+};
+const Z_STATES = {
+  sw:"Lagos,Ogun,Oyo,Osun,Ondo,Ekiti", se:"Abia,Anambra,Ebonyi,Enugu,Imo",
+  ss:"Akwa Ibom,Bayelsa,Cross River,Delta,Edo,Rivers",
+  nc:"Benue,Kogi,Kwara,Nasarawa,Niger,Plateau,FCT (Abuja)",
+  ne:"Adamawa,Bauchi,Borno,Gombe,Taraba,Yobe", nw:"Jigawa,Kaduna,Kano,Katsina,Kebbi,Sokoto,Zamfara"
+};
+const STATE_ZONE = {}; Object.keys(Z_STATES).forEach(k => Z_STATES[k].split(",").forEach(s => STATE_ZONE[s] = k));
+
+const $ = id => document.getElementById(id);
+const LOGO = "data:image/png;base64,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";
+document.querySelectorAll("img[data-logo]").forEach(i => i.src = LOGO);
+document.querySelector('link[rel="icon"]').href = LOGO;
+const naira = n => "₦" + n.toLocaleString("en-NG");
+let qty = 1;
+
+const SAVE = {3:500, 4:750, 5:900};
+const MORE_RATE = 6600;   // 6 or more pieces, no further reduction
+const priceFor = q => BUNDLES[q] || q*MORE_RATE;
+$("bundles").insertAdjacentHTML("beforeend",
+  Object.keys(BUNDLES).map(q =>
+  `<label><span class="l"><input type="radio" name="qty" value="${q}" ${q==1?"checked":""}><span>${q} piece${q>1?"s":""}${q>=FREE_MIN_QTY?'<span class="tag">Free delivery*</span>':""}${SAVE[q]?`<em class="save">You save ${naira(SAVE[q])} per item</em>`:""}</span></span><span class="p">${naira(BUNDLES[q])}</span></label>`).join("")
+  + `<label><span class="l"><input type="radio" name="qty" value="more" id="moreRadio"><span>6 or more<input type="number" id="moreQty" min="6" max="100" value="6" inputmode="numeric" aria-label="Number of pieces (6 or more)"><span class="tag">Free delivery*</span></span></span><span class="p" id="morePrice">${naira(6*MORE_RATE)}</span></label>`
+  + `<p class="note" style="margin:6px 0 0">*Free delivery to South-West, South-East and South-South. But North-Central, North-East and North-West will pay an additional ${naira(SURCHARGE)} for distance delivery. Your fee is shown before you pay. Prices are in Nigerian naira (₦).</p>`);
+$("state").insertAdjacentHTML("beforeend", Object.keys(STATE_ZONE).sort().map(s=>`<option>${s}</option>`).join(""));
+
+function stations(){
+  const st = $("state").value, list = (window.PICKUP_STATIONS||{})[st] || [], p = $("pickup");
+  if(!st){ p.innerHTML = '<option value="">Select your state first</option>'; return; }
+  p.innerHTML = list.length
+    ? '<option value="">Choose a pickup location</option>' + list.map(x=>`<option>${x}</option>`).join("")
+    : '<option value="">Not available for this state yet</option>';
+  $("puNote").textContent = list.length ? "You collect your parcel from the Jumia location you choose." : "Jumia pickup is not listed for this state yet. Please message us on WhatsApp before ordering.";
+}
+
+function update(){
+  const sub = priceFor(qty), st = $("state").value, z = ZONES[STATE_ZONE[st]];
+  $("qtyLabel").textContent = `${qty} × mini heat sealer`;
+  $("sub").textContent = naira(sub);
+  $("sur").innerHTML = "";
+  if(!z){ $("del").textContent = "Select your state"; $("total").textContent = "-"; return; }
+  const bundle = qty >= FREE_MIN_QTY, fee = bundle ? z.extra : SINGLE_FEE;
+  $("xrow").hidden = !(bundle && z.extra);
+  $("xlbl").textContent = `Distance fee (${z.n})`; $("xfee").textContent = naira(z.extra);
+  $("del").innerHTML = bundle ? '<span class="free">FREE</span>' : naira(fee);
+  $("total").textContent = naira(sub + fee);
+  if(qty >= FREE_MIN_QTY && z.extra)
+    $("sur").innerHTML = `<div class="sur">A ${naira(z.extra)} delivery fee applies to ${z.n} because of distance.</div>`;
+  if(qty < FREE_MIN_QTY)
+    $("sur").innerHTML = `<div class="sur">Order 2 or more pieces and delivery drops to ${z.extra ? naira(z.extra) : "FREE"} in ${z.n}.</div>`;
+}
+
+function pick(){
+  const r = document.querySelector('input[name="qty"]:checked').value;
+  if(r === "more"){ let n = parseInt($("moreQty").value,10); if(!(n>=6)) n = 6; if(n>100) n = 100; qty = n; $("morePrice").textContent = naira(n*MORE_RATE); }
+  else qty = +r;
+  update();
+}
+document.querySelectorAll('input[name="qty"]').forEach(r => r.addEventListener("change", pick));
+$("moreQty").addEventListener("focus", () => {$("moreRadio").checked = true; pick();});
+$("moreQty").addEventListener("input", () => {$("moreRadio").checked = true; pick();});
+$("moreQty").addEventListener("change", () => {$("moreQty").value = Math.min(100, Math.max(6, parseInt($("moreQty").value,10) || 6)); pick();});
+$("state").addEventListener("change", () => {stations(); update();});
+$("pickup").addEventListener("change", () => {
+  $("puNote").textContent = /home delivery/i.test($("pickup").value) ? "Home delivery: we will deliver to the street address you entered." : "You collect your parcel from the Jumia location you choose.";
+});
+
+$("checkout").addEventListener("submit", e => {
+  e.preventDefault();
+  const m = $("msg"), need = ["name","phone","email","state","city","address","pickup"].filter(i => !$(i).value.trim());
+  if(need.length){ m.className="msg err"; m.textContent="Please fill in: " + need.join(", ") + "."; $(need[0]).focus(); return; }
+  if(!/^(\+?234|0)[789][01]\d{8}$/.test($("phone").value.replace(/[\s-]/g,""))){ m.className="msg err"; m.textContent="Enter a valid Nigerian phone number, e.g. 08012345678."; $("phone").focus(); return; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($("email").value.trim())){ m.className="msg err"; m.textContent="Enter a valid email address."; $("email").focus(); return; }
+  const btn = e.target.querySelector("button[type=submit]"); btn.disabled = true;
+  m.className = "msg info"; m.textContent = "Preparing your secure payment...";
+  fetch("/api/create-order", {method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({name:$("name").value, phone:$("phone").value, email:$("email").value, state:$("state").value, city:$("city").value, address:$("address").value, pickup:$("pickup").value, qty})})
+  .then(r => r.json()).then(d => { if(d.authorization_url) location.href = d.authorization_url; else throw new Error(d.error || "Could not start payment."); })
+  .catch(x => { m.className = "msg err"; m.textContent = x.message + " Please try again or message us on WhatsApp."; btn.disabled = false; });
+});
+update();
+
+// Photos and video you upload in admin.html
+(async () => {
+  if(!window.SUPABASE_URL || SUPABASE_URL.includes("YOUR")) return;
+  try{
+    const r = await fetch(SUPABASE_URL + "/rest/v1/site_media?select=slot,url", {headers:{apikey:SUPABASE_ANON_KEY}});
+    const m = {}; (await r.json()).forEach(x => m[x.slot] = x.url);
+    if(m.hero){ $("heroImg").src = m.hero; $("heroImg").hidden = false; $("heroPh").style.display = "none"; }
+    $("gal").innerHTML = ["gallery1","gallery2","gallery3"].filter(k=>m[k]).map(k=>`<img src="${m[k]}" alt="Mini heat sealer photo" loading="lazy">`).join("");
+    if(m.video) $("vidBox").innerHTML = `<video controls playsinline preload="metadata" src="${m.video}"></video>`;
+  }catch(e){}
+})();
+
+// Order tracking
+$("tbtn").onclick = async () => {
+  const c = $("tcode").value.trim().toUpperCase().replace(/\s/g,""), box = $("tres"); box.hidden = false;
+  if(!/^[A-Z0-9]{6,30}$/.test(c)){ box.textContent = "Please enter your order code."; return; }
+  box.textContent = "Checking...";
+  try{
+    const d = await (await fetch("/api/track?ref=" + encodeURIComponent(c))).json();
+    if(!d.found){ box.textContent = "We could not find that order code. Please check it, or message us on WhatsApp."; return; }
+    const when = new Date(d.date).toLocaleDateString("en-NG",{day:"numeric",month:"long",year:"numeric"});
+    let html = "<h3 style='margin-top:0'>Order <span id='tcref'></span></h3><p class='note'>Placed " + when + " · " + d.qty + " × mini heat sealer · " + naira(d.total) + "</p>";
+    if(d.payment === "successful"){
+      const i = {new:0, processing:1, dispatched:2, delivered:3}[d.fulfilment] ?? 0;
+      html += "<ul class='steps2'>" + ["Payment confirmed","Processing","Dispatched","Delivered"].map((t,k)=>`<li class="${k<=i?"on":""}">${t}</li>`).join("") + "</ul>";
+    } else if(d.payment === "refunded") html += "<p><strong>This order has been refunded.</strong></p>";
+    else if(d.payment === "failed") html += "<p><strong>Payment was not completed.</strong> Please place the order again.</p>";
+    else html += "<p><strong>Waiting for payment.</strong> If you have paid, wait a few minutes and check again.</p>";
+    box.innerHTML = html; $("tcref").textContent = c;
+  }catch(e){ box.textContent = "Could not check right now. Please try again."; }
+};
+
+// After paying: Paystack sends the customer back with ?reference=...
+(async () => {
+  const ref = new URLSearchParams(location.search).get("reference");
+  if(!ref) return;
+  const box = $("paidBox"); box.hidden = false; box.textContent = "Checking your payment...";
+  const show = (h, t) => { box.innerHTML = "<h2></h2><p></p>"; box.children[0].textContent = h; box.children[1].textContent = t; };
+  try{
+    const d = await (await fetch("/api/payments?ref=" + encodeURIComponent(ref))).json();
+    if(d.state === "paid") show("Payment confirmed", `Thank you! Your order ${d.reference} (${naira(d.total)}) is confirmed. We will contact you on the phone number you gave when it is on its way.`);
+    else if(d.state === "failed") show("Payment not completed", "Your payment did not go through and you have not been charged for this order. Please try again.");
+    else show("Payment not confirmed yet", "If money left your account, wait a few minutes and refresh this page. Or message us on WhatsApp with this reference: " + ref);
+  }catch(e){ show("We could not check your payment", "Please message us on WhatsApp with this reference: " + ref); }
+})();
+
+// ===== Admin: open your-store-link/#admin =====
+if(location.hash === "#admin") (function(){
+  ["header","main","footer"].forEach(t => document.querySelector(t).hidden = true);
+  $("admin").hidden = false;
+  if(SUPABASE_URL.includes("YOUR")){ $("lm").textContent = "Supabase details have not been added to the store yet."; return; }
+  const SLOTS = [["hero","Main product photo","image"],["gallery1","Extra photo 1","image"],["gallery2","Extra photo 2","image"],["gallery3","Extra photo 3","image"],["video","Demo video (MP4, under 50 MB)","video"]];
+  let sb;
+  async function shrink(f){
+    const b = await createImageBitmap(f), k = Math.min(1, 1200/Math.max(b.width,b.height));
+    const c = document.createElement("canvas"); c.width = b.width*k; c.height = b.height*k;
+    c.getContext("2d").drawImage(b,0,0,c.width,c.height);
+    return new Promise(r => c.toBlob(r,"image/jpeg",.85));
+  }
+  async function adminLoad(){
+    const {data} = await sb.from("site_media").select("slot,url"), cur = {};
+    (data||[]).forEach(r => cur[r.slot] = r.url);
+    $("slots").innerHTML = SLOTS.map(([s,t,k]) => `<div class="card"><h3>${t}</h3>
+      ${cur[s] ? (k=="video" ? `<video src="${cur[s]}" controls></video>` : `<img src="${cur[s]}" alt="">`) : '<p class="note">Nothing uploaded yet.</p>'}
+      <input type="file" id="f-${s}" accept="${k=="video"?"video/*":"image/*"}">
+      <button data-up="${s}" data-k="${k}">Upload</button>
+      ${cur[s] ? `<button class="g" data-rm="${s}">Remove from website</button>` : ""}
+      <p class="note" id="m-${s}"></p></div>`).join("");
+  }
+  async function adminShow(){
+    const {data} = await sb.auth.getSession(), on = !!data.session;
+    $("aLogin").hidden = on; $("aOut").hidden = !on;
+    if(on){ adminLoad(); ordersLoad(); }
+  }
+  let ORD = [];
+  const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const money = n => "₦" + (n || 0).toLocaleString("en-NG");
+  async function ordersLoad(){
+    const o = await sb.from("orders").select("*").order("created_at", {ascending:false});
+    const st = await sb.from("stock").select("*").eq("id",1).single();
+    ORD = o.data || [];
+    const k = st.data || {quantity:0, low_threshold:5}, low = k.quantity <= k.low_threshold;
+    $("stockBox").innerHTML = `<h3>Stock: ${esc(k.quantity)} left</h3>${low ? '<p style="color:#b3261e;font-weight:700">Low stock! Reorder soon.</p>' : ""}
+      <input id="sq" type="number" value="${esc(k.quantity)}" aria-label="Stock quantity"><button id="ssave">Update stock</button>`;
+    $("ssave").onclick = async () => { await sb.from("stock").update({quantity: parseInt($("sq").value,10) || 0}).eq("id",1); ordersLoad(); };
+    drawOrders();
+  }
+  function filtered(){
+    const q = $("q").value.toLowerCase(), p = $("fp").value, f = $("ff").value;
+    return ORD.filter(o => (!p || o.payment_status === p) && (!f || o.fulfilment_status === f) &&
+      (!q || [o.name,o.phone,o.reference,o.state,o.city,o.email].join(" ").toLowerCase().includes(q)));
+  }
+  function drawOrders(){
+    const L = filtered();
+    $("orders").innerHTML = L.length ? L.map(o => `<div class="card"><strong>${esc(o.reference)}</strong> · ${new Date(o.created_at).toLocaleString("en-NG")}<br>
+      <b>${esc(o.name)}</b> · <a href="tel:${esc(o.phone)}">${esc(o.phone)}</a>${o.email ? " · " + esc(o.email) : ""}<br>
+      ${esc(o.qty)} × sealer · ${money(o.total)} (items ${money(o.subtotal)} + delivery ${money(o.delivery_fee)})<br>
+      Address: ${esc(o.address)}<br>
+      ${/home delivery/i.test(o.pickup) ? "Delivery" : "Pickup"}: ${esc(o.pickup)}, ${esc(o.city)}, ${esc(o.state)}<br>
+      Payment: <b>${esc(o.payment_status)}</b><br>
+      <label class="note">Fulfilment</label>
+      <select data-id="${esc(o.id)}">${["new","processing","dispatched","delivered"].map(v => `<option ${v === o.fulfilment_status ? "selected" : ""}>${v}</option>`).join("")}</select>
+      ${o.payment_status === "successful" ? `<button data-inv="${esc(o.id)}">Print invoice</button><button class="g" data-refund="${esc(o.id)}">Mark as refunded</button>` : ""}</div>`).join("")
+      : '<p class="note">No orders match.</p>';
+  }
+  async function printInvoice(o){
+    if(!o) return;
+    const d = new Date(o.paid_at || o.created_at).toLocaleDateString("en-NG",{day:"numeric",month:"long",year:"numeric"});
+    const td = "padding:8px;border-bottom:1px solid #ccc;";
+    $("invoiceBox").innerHTML = `<div style="max-width:720px;margin:0 auto;padding:24px;font-family:Arial,sans-serif;color:#000">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #007a3f;padding-bottom:14px">
+        <img src="${LOGO}" alt="SnapSeal Naija" style="height:90px;width:90px">
+        <div style="text-align:right"><h1 style="margin:0;font-size:28px">INVOICE</h1>
+        <div>No: ${esc(o.reference)}</div><div>Date: ${d}</div></div></div>
+      <div style="display:flex;justify-content:space-between;margin:18px 0;gap:20px">
+        <div><strong>From</strong><br>SnapSeal Naija<br>Port Harcourt, Nigeria<br>WhatsApp +234 805 828 2843<br>makkychoco@gmail.com</div>
+        <div><strong>Billed to</strong><br>${esc(o.name)}<br>${esc(o.phone)}<br>${esc(o.email)}<br>${esc(o.address)}, ${esc(o.city)}, ${esc(o.state)}</div></div>
+      <p>${/home delivery/i.test(o.pickup) ? "<strong>Delivery:</strong> Home delivery to the address above" : "<strong>Collect at:</strong> " + esc(o.pickup) + " (Jumia pickup)"}</p>
+      <table style="width:100%;border-collapse:collapse;margin-top:10px">
+        <tr style="background:#eee"><th style="${td}text-align:left">Item</th><th style="${td}text-align:center">Qty</th><th style="${td}text-align:right">Amount</th></tr>
+        <tr><td style="${td}">Mini portable heat sealer</td><td style="${td}text-align:center">${esc(o.qty)}</td><td style="${td}text-align:right">${money(o.subtotal)}</td></tr>
+        <tr><td style="${td}">Delivery</td><td style="${td}"></td><td style="${td}text-align:right">${o.delivery_fee ? money(o.delivery_fee) : "FREE"}</td></tr>
+        <tr><td style="padding:10px 8px;font-weight:700;font-size:18px" colspan="2">Total paid</td><td style="padding:10px 8px;font-weight:700;font-size:18px;text-align:right">${money(o.total)}</td></tr>
+      </table>
+      <p style="margin-top:18px"><strong>Payment status: PAID</strong> (online, via Paystack)</p>
+      <p style="margin-top:30px;color:#555;font-size:13px">Thank you for your order. Questions? WhatsApp +234 805 828 2843.</p></div>`;
+    const im = $("invoiceBox").querySelector("img");
+    if(!im.complete) await new Promise(r => { im.onload = im.onerror = r; });
+    document.body.classList.add("printing");
+    window.onafterprint = () => document.body.classList.remove("printing");
+    window.print();
+  }
+  function start(){
+    sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    $("go").onclick = async () => {
+      const {error} = await sb.auth.signInWithPassword({email:$("em").value, password:$("pw").value});
+      $("lm").textContent = error ? "Login failed: " + error.message : ""; adminShow();
+    };
+    $("lo").onclick = async () => { await sb.auth.signOut(); adminShow(); };
+    $("slots").onclick = async e => {
+      const up = e.target.dataset.up, rm = e.target.dataset.rm;
+      if(rm){ await sb.from("site_media").delete().eq("slot",rm); return adminLoad(); }
+      if(!up) return;
+      const k = e.target.dataset.k, m = $("m-"+up), f = $("f-"+up).files[0];
+      if(!f){ m.textContent = "Choose a file first."; return; }
+      if(k=="video" && f.size > 50*1048576){ m.textContent = "This video is over 50 MB. Shorten or compress it, then try again."; return; }
+      m.textContent = "Uploading, please wait...";
+      try{
+        const body = k=="image" ? await shrink(f) : f;
+        const ext = k=="image" ? "jpg" : (f.name.split(".").pop() || "mp4").toLowerCase();
+        const path = `${up}-${Date.now()}.${ext}`;
+        let r = await sb.storage.from("media").upload(path, body, {contentType: k=="image" ? "image/jpeg" : f.type});
+        if(r.error) throw r.error;
+        const url = sb.storage.from("media").getPublicUrl(path).data.publicUrl;
+        r = await sb.from("site_media").upsert({slot:up, url, kind:k, updated_at:new Date().toISOString()});
+        if(r.error) throw r.error;
+        adminLoad();
+      }catch(x){ m.textContent = "Upload failed: " + x.message; }
+    };
+    $("tOrd").onclick = () => { $("tabOrders").hidden = false; $("tabMedia").hidden = true; };
+    $("tMed").onclick = () => { $("tabOrders").hidden = true; $("tabMedia").hidden = false; };
+    ["q","fp","ff"].forEach(i => $(i).oninput = drawOrders);
+    $("orders").onchange = async e => {
+      const id = e.target.dataset.id; if(!id) return;
+      const r = await sb.from("orders").update({fulfilment_status: e.target.value}).eq("id", id);
+      if(r.error) alert("Could not update: " + r.error.message); else ORD.find(o => o.id === id).fulfilment_status = e.target.value;
+    };
+    $("orders").onclick = async e => {
+      if(e.target.dataset.inv) return printInvoice(ORD.find(o => o.id === e.target.dataset.inv));
+      const id = e.target.dataset.refund;
+      if(id && confirm("Mark this order as refunded here? Do the actual refund in your Paystack dashboard.")){
+        await sb.from("orders").update({payment_status:"refunded"}).eq("id", id); ordersLoad();
+      }
+    };
+    $("csv").onclick = () => {
+      const cols = ["reference","created_at","name","phone","email","state","city","address","pickup","qty","subtotal","delivery_fee","total","payment_status","fulfilment_status","paid_at"];
+      const cell = v => { v = String(v ?? ""); if(/^[=+\-@]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g,'""') + '"'; };
+      const csv = [cols.join(",")].concat(filtered().map(o => cols.map(c => cell(o[c])).join(","))).join("\n");
+      const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + csv], {type:"text/csv"})); a.download = "orders.csv"; a.click();
+    };
+    adminShow();
+  }
+  const sc = document.createElement("script");
+  sc.src = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+  sc.onload = start; document.head.appendChild(sc);
+})();
+</script>
+</body>
+</html>
