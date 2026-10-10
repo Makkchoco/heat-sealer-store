@@ -9,6 +9,23 @@ async function hmac(secret, body) {
   return [...new Uint8Array(sig)].map(x => x.toString(16).padStart(2, "0")).join("");
 }
 
+// Sends a "new paid order" alert. Each channel only runs if its settings exist in Cloudflare.
+async function notify(env, o, stock) {
+  const money = "₦" + Number(o.total).toLocaleString("en-NG");
+  let text = `New PAID order ${o.reference}\n${o.qty} × sealer · ${money}\n${o.name} · ${o.phone}\n${o.address || ""}, ${o.city}, ${o.state}\n` +
+    (/home delivery/i.test(o.pickup || "") ? "Home delivery" : "Pickup: " + o.pickup);
+  if (stock && stock.quantity <= stock.low_threshold) text += `\n\nLOW STOCK: only ${stock.quantity} left.`;
+  const jobs = [];
+  if (env.RESEND_API_KEY && env.ALERT_EMAIL)
+    jobs.push(fetch("https://api.resend.com/emails", {method: "POST",
+      headers: {Authorization: "Bearer " + env.RESEND_API_KEY, "Content-Type": "application/json"},
+      body: JSON.stringify({from: "SnapSeal Orders <onboarding@resend.dev>", to: [env.ALERT_EMAIL], subject: `New paid order ${o.reference} - ${money}`, text})}));
+  if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID)
+    jobs.push(fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {method: "POST",
+      headers: {"Content-Type": "application/json"}, body: JSON.stringify({chat_id: env.TELEGRAM_CHAT_ID, text})}));
+  await Promise.allSettled(jobs);
+}
+
 async function confirm(ref, env) {
   const h = {apikey: env.SUPABASE_SECRET_KEY, "Content-Type": "application/json"};
   const r = await fetch("https://api.paystack.co/transaction/verify/" + encodeURIComponent(ref), {headers: {Authorization: "Bearer " + env.PAYSTACK_SECRET_KEY}});
@@ -19,7 +36,13 @@ async function confirm(ref, env) {
     if (t.currency !== "NGN") return {state: "error"};
     const res = await (await fetch(`${SB}/rest/v1/rpc/mark_paid`, {method: "POST", headers: h, body: JSON.stringify({p_ref: ref, p_amount: Math.round(t.amount / 100)})})).json();
     if (res !== "paid" && res !== "already_paid") return {state: "error"};
-    const o = await (await fetch(`${SB}/rest/v1/orders?reference=eq.${encodeURIComponent(ref)}&select=reference,total`, {headers: h})).json();
+    const o = await (await fetch(`${SB}/rest/v1/orders?reference=eq.${encodeURIComponent(ref)}&select=*`, {headers: h})).json();
+    if (res === "paid" && o[0]) {   // "paid" appears only the first time, so the alert is sent once
+      try {
+        const sk = await (await fetch(`${SB}/rest/v1/stock?id=eq.1&select=quantity,low_threshold`, {headers: h})).json();
+        await notify(env, o[0], sk[0]);
+      } catch (e) {}
+    }
     return {state: "paid", reference: ref, total: o[0] && o[0].total};
   }
   if (t.status === "failed") {
